@@ -12,19 +12,7 @@ Erlang/OTP 分布式编程
 Erlang/OTP 最初是爱立信为开发电信设备系统设计的编程语言平台，电信设备(路由器、接入网关、...)典型设计是通过背板连接主控板卡与多块业务板卡的分布式系统。
 
 
-Erlang/OTP 语言平台的分布式程序，由分布互联的 Erlang 运行系统组成，每个 Erlang 运行系统被称为节点(Node)，节点(Node) 间通过 TCP 互联，消息传递的方式通信::
-
-    ---------         ---------
-    | Node1 | --------| Node2 |
-    ---------         ---------
-        |     \     /    |
-        |       \ /      |
-        |       / \      |
-        |     /     \    |
-    ---------         ---------
-    | Node3 | --------| Node4 |
-    ---------         ---------
-
+Erlang/OTP 语言平台的分布式程序，由分布互联的 Erlang 运行系统组成，每个 Erlang 运行系统被称为节点(Node)，节点(Node) 间通过 TCP 互联，消息传递的方式通信:
 
 .. image:: _static/images/clustering_1.png
 
@@ -386,7 +374,7 @@ EMQ X R2.3 版本支持从集群自动删除宕机节点(Autoclean):
 
 EMQ X 消息服务器集群模式下，MQTT 连接的持久会话(Session)跨节点。
 
-例如负载均衡的两台集群节点: node1 与 node2，同一 MQTT 客户端先连接 node1，node1 节点会创建持久会话；客户端断线重连到 node2 时，MQTT 的连接在 node2 节点，持久会话仍在 node1 节点::
+例如负载均衡的两台集群节点: node1 与 node2，同一 MQTT 客户端先连接 node1，node1 节点会创建持久会话；客户端断线重连到 node2 时，MQTT 的连接在 node2 节点，持久会话仍在 node1 节点:
 
 .. image:: _static/images/clustering_4.png
 
